@@ -1,32 +1,24 @@
-# Credit Default Risk Prediction Pipeline
+# Global Initiative to Understand Worldwide Lifestyle Patterns (WHO-LIFE)
 
 ## 📌 Project Overview
-This project focuses on building a robust Machine Learning pipeline to predict **Credit Default Risk**. In financial lending, failing to identify a defaulting client (a False Negative) is significantly more expensive than misclassifying a good client. Therefore, this project evaluates multiple classification algorithms, prioritizing **Recall (Sensitivity)** and **F1-Score** to optimize risk management.
+This repository contains an end-to-end Machine Learning pipeline built on the World Health Organization (WHO-LIFE) dataset. The project aims to analyze, segment, and predict global citizen profiles based on behavioral, financial, and health characteristics. By uncovering geographic and social lifestyle trends, this pipeline helps design data-driven, culturally-aware public health and wellness interventions.
 
-## 📊 Dataset Profile & Imbalance Challenge
-The dataset used reflects a real-world financial scenario with a severe class imbalance:
-* **Non-Defaulters (Class 0):** 91.2%
-* **Defaulters (Class 1):** 8.8%
+## 📊 Methodology & Key Highlights
+1. **Robust Data Engineering:** Conducted Exploratory Data Analysis (EDA), managed structural missing values, performed outlier detection, and executed strategic feature engineering.
+2. **Descriptive Modeling (Clustering):** Implemented **K-Means (3 distinct clusters)** and **Self-Organizing Maps (SOM - 6 sub-profiles)** to discover latent lifestyle archetypes, such as *“Digital Socialites”*.
+3. **Predictive Modeling & Optimization:** Built multi-class classification frameworks to predict citizen segments. Benchmarked several architectures:
+   * **Gradient Boosting Classifiers** (Optimized via **Optuna** hyperparameter tuning)
+   * **Random Forest**
+   * **Multi-Layer Perceptron (MLP)** with custom activation tuning
+   * **Logistic Regression**
 
-To prevent model bias toward the majority class, data balancing techniques (**SMOTE** and **Random Under-Sampling**) were incorporated and evaluated within the pipeline.
+## 📈 Results & Performance
+* **Best Model:** Gradient Boosting with hyperparameter tuning.
+* **Evaluation Score:** Achieved a peak **Kaggle Score of 0.82079**, demonstrating low overfit risk and robust generalization boundaries.
+* **Strategic Outcome:** Developed a data-driven action plan recommending targeted digital media marketing, regional financial wellness bundling, and dynamic dashboards for public healthcare deployment.
 
 ## 🛠️ Tech Stack & Libraries
 * **Language:** Python
-* **Data Engineering & EDA:** Pandas, NumPy, Matplotlib, Seaborn
-* **Machine Learning Frameworks:** Scikit-Learn, XGBoost, LightGBM
-* **Imbalanced Data Handling:** Imbalanced-learn (SMOTE)
-
-## 🚀 Pipeline Architecture
-1. **Exploratory Data Analysis (EDA):** Analyzed feature distributions, detected correlations, and quantified the extent of class imbalance.
-2. **Data Preprocessing:** Managed missing values, encoded categorical variables, and normalized features for model readiness.
-3. **Resampling Strategies:** Applied Synthetic Minority Over-sampling Technique (SMOTE) combined with Random Under-Sampling to create an optimized training baseline.
-4. **Model Exploration & Evaluation:** Trained and benchmarked a diverse set of classifiers:
-   * Logistic Regression
-   * Random Forest
-   * LightGBM
-   * XGBoost
-5. **Hyperparameter Tuning:** Optimized decision thresholds to maximize the identification of true defaulters while balancing precision.
-
-## 📈 Key Findings & Results
-* Conventional accuracy metrics were discarded in favor of **Recall** and **F1-Score** due to the high business cost of missed defaults.
-* Boosting algorithms (**XGBoost and LightGBM**) combined with resampling strategies yielded the most reliable decision boundaries, significantly capturing the minority default class compared to un-sampled baselines.
+* **Data Pipelines & Visualization:** Pandas, NumPy, Matplotlib, Seaborn
+* **Machine Learning Frameworks:** Scikit-Learn, LightGBM, GradientBoosting
+* **Optimization:** Optuna
